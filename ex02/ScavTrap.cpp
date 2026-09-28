@@ -19,14 +19,15 @@ ScavTrap::ScavTrap(const std::string name) : ClapTrap(name)
 	this->_is_guardgate = false;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap &other)
+	: ClapTrap(other), _is_guardgate(other._is_guardgate)
 {
 	std::cout << "ScavTrap: Copy constructor called\n";
 }
 
-ScavTrap &ScavTrap::operator = (const ScavTrap &other)
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-	
+
 	std::cout << "ScavTrap: Copy assignment constructor called\n";
 	this->_name = other._name;
 	this->_hit_points = other._hit_points;
